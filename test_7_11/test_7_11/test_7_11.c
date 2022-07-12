@@ -48,7 +48,52 @@
 //}
 
 
+//int main()
+//{
+//	int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	int i = 0;
+//	for (i = 0; i < sz; i++)
+//	{
+//		printf("&arr[%d]=%p\n", i, &arr[i]);
+//	}
+//	
+//	return 0;
+//}
+
+
+//int main()
+//{
+//	int arr[3][4] = { { 1, 2, 3 }, { 4, 5 } };
+//	int i = 0;
+//	for (i = 0; i <= 2; i++)
+//	{
+//		int j = 0;
+//		for (j = 0; j <= 3; j++)
+//		{
+//			printf("%d ", arr[i][j]);
+//		}
+//		printf("\n");
+//	}
+//	//char ch[5][6];
+//	//int arr[][4] = { { 1, 2, 3, 4 }, { 5, 6, 7, 8 } };//二维数组行可以省略，列不能
+//	
+//	return 0;
+//}
+
 int main()
 {
-	int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+	int arr[3][4] = { { 1, 2, 3 }, { 4, 5 } };
+	int i = 0;
+	for (i = 0; i <= 2; i++)
+	{
+		int j = 0;
+		for (j = 0; j <= 3; j++)
+		{
+			printf("&arr[%d][%d]=%p\n",i,j, &arr[i][j]);
+		}
+		
+	}
+	
+	return 0;
 }
