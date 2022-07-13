@@ -10,14 +10,14 @@ void menu()
 
 void game1()
 {
-	
+	char ret = 0;
 	//数组存放棋盘信息
-	char board[ROW][COL] ;
+	char board[ROW][COL] = {0};
 	//初始化棋盘
 	InitBoard(board, ROW, COL);
 	//打印棋盘
 	DisplayBoard(board,ROW,COL);
-	char ret = 0;
+	
 	//下棋
 	while (1)
 	{
@@ -25,20 +25,20 @@ void game1()
 		PlayerMove(board,ROW,COL);
 		DisplayBoard(board, ROW, COL);
 		//判断玩家是否赢
-		//ret = IsWin(board, ROW, COL);
-		//if (ret !='C');
-		//{
-		//	break;
-		//}
+		ret = IsWin(board, ROW, COL);
+		if (ret !='C')
+		{
+			break;
+		}
 		//电脑下棋
 		ComputerMove(board, ROW, COL);
 		DisplayBoard(board, ROW, COL);
 		//判断电脑是否赢
-	//	ret = IsWin(board, ROW, COL);
-	//	if (ret != 'C');
-	//	{
-	//		break;
-	//	}
+		ret = IsWin(board, ROW, COL);
+		if (ret != 'C')
+		{
+			break;
+		}
 	}
 	if (ret == '*')
 	{
@@ -48,7 +48,7 @@ void game1()
 	{
 		printf("电脑赢\n");
 	}
-	else
+	else if (ret == 'Q')
 	{
 		printf("平局\n");
 	}

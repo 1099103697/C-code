@@ -43,7 +43,6 @@ void DisplayBoard(char board[ROW][COL], int row, int col)
 		//2.打印分割行
 		if (i < row - 1)
 		{
-			int j = 0;
 			for (j = 0; j < col; j++)
 			{
 				printf("---");
@@ -112,7 +111,7 @@ int IsFull(char board[ROW][COL], int row, int col)
 	{
 		for (j = 0; j < col; j++)
 		{
-			if (board[i][j] == ' ')
+			if (board[i][j]==' ')
 			{
 				return 0;
 			}
@@ -142,16 +141,11 @@ char IsWin(char board[ROW][COL], int row, int col)
 	}
 	//对角线
 	if (board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[1][1] != ' ')
-	{
 		return board[1][1];
-	}
 	if (board[2][0] == board[1][1] && board[1][1] == board[0][2] && board[1][1] != ' ')
-	{
 		return board[1][1];
-	}
 	////判断是否平局
-	int ret = IsFull(board, row, col);
-	if (ret==1)
+	if (1==IsFull(board,ROW,COL))
 	{
 		return 'Q';
 	}
